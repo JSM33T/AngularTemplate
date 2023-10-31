@@ -29,7 +29,7 @@ import { ToolsComponent } from './tools/tools.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'contact', component: ContactComponent },
+      { path: 'about', component: ContactComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'projects', component: ProjectComponent },
       { path: 'tools', component: ToolsComponent },
