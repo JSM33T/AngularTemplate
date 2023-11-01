@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -11,6 +11,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectComponent } from './projects/projects.component';
 import { ToolsComponent } from './tools/tools.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,12 @@ import { ToolsComponent } from './tools/tools.component';
       scrollPositionRestoration: 'top', // This line ensures scrolling to the top
       anchorScrolling: 'enabled',
       scrollOffset: [0, 0],
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [
