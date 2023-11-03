@@ -48,12 +48,8 @@ export class NavMenuComponent implements AfterViewInit {
       }, 2000);
     }
   }
-  isExpanded = false;
-
-  collapse() {
-    this.isExpanded = false;
-  }
-
+  isExpanded: boolean = false;
+  isCollapsed: boolean = false;
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
