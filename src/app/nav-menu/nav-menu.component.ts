@@ -7,7 +7,6 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class NavMenuComponent implements AfterViewInit {
   ngOnInit() {
-    // Initialize dark mode based on local storage or any other logic
     this.initializeDarkMode();
   }
   toggleDarkMode(event: Event) {
@@ -24,7 +23,6 @@ export class NavMenuComponent implements AfterViewInit {
   }
 
   initializeDarkMode() {
-    // Check local storage or other logic to set initial state
     const mode = window.localStorage.getItem('mode');
     const checkbox = document.getElementById('theme-mode') as HTMLInputElement;
     const root = document.documentElement;

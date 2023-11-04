@@ -1,3 +1,23 @@
-<section class="container py-5 mt-5 mb-xl-3 mb-xxl-5">
-  ID
-  </section>
+<section class="container py-3 mt-5 mb-xl-3 mb-xxl-5" data-aos="fade-in" data-aos-duration="200" data-aos-offset="170">
+  <div *ngFor="let category of jsonData;let i = index" class="pt-3">
+    <div class="d-flex align-items-center pb-2 mb-1">
+      <span class="badge bg-faded-primary text-primary fs-xs ms-3">{{ category.category }}</span>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4" >
+      <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let dt of category.items;let j = index">
+        <div class="card h-100 rounded-3 p-2 p-sm-4"
+        [attr.data-aos]="'zoom-in-up'"
+        [attr.data-aos-duration]="400 + i*j*100 + 100"
+         >
+          <div class="d-flex align-items-center">
+              <img width="42" class="p-1 rounded-3" [src]="dt.img" alt="JavaScript" title="JavaScript"/>
+            <div class="ps-1 fs-sm">
+              <div class="text-dark">{{ dt.title }}</div>
+              <div class="text-muted">{{ dt.email }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
