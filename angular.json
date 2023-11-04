@@ -24,7 +24,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": ["src/assets/thecoffeeroom.css","src/assets/styles.css"],
-            "scripts": [],
+            "scripts": ["src/assets/theme.prod.js"],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },

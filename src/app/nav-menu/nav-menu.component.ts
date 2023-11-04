@@ -6,6 +6,8 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent implements AfterViewInit {
+
+  isExpanded: boolean = true;
   ngOnInit() {
     this.initializeDarkMode();
   }
@@ -45,10 +47,26 @@ export class NavMenuComponent implements AfterViewInit {
         preloader.remove();
       }, 2000);
     }
+    if (window.innerWidth < 1000) {
+      this.isExpanded = false;
+    }
+    else
+    {
+      this.isExpanded = true;
+    }
+
   }
-  isExpanded: boolean = false;
-  isCollapsed: boolean = false;
+  
   toggle() {
-    this.isExpanded = !this.isExpanded;
+    if (window.innerWidth < 1000) {
+      this.isExpanded = !this.isExpanded;
+    }
+  }
+  
+  handleNavItemClick(event: Event) {
+    if(window.innerWidth < 1000)
+    {
+      this.isExpanded = !this.isExpanded;
+    }
   }
 }

@@ -13,11 +13,11 @@ export class ToolsComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(): void {
    // this.initCarousel();
-   this.initSmoothScroll();
+   this.initAos();
   }
 
 
-  private initSmoothScroll() {
+  private initAos() {
     var animationToggle = document.querySelector('[data-aos]');
     if (animationToggle === null) return;
     Aos.init();
