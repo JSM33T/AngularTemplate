@@ -3,6 +3,9 @@
   transform: translateY(10px);
   animation: fadeInAnimation 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
+.crd-shadow {
+  box-shadow: 0 6px 11px rgba(0, 0, 3, 0.2);
+}
 
 @keyframes fadeInAnimation {
   to {
