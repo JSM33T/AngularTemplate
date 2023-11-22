@@ -30,15 +30,24 @@ export class HomeComponent implements AfterViewInit {
     };
     this.apiService.postData(data).subscribe(
       (response) => {
-        console.log('Data posted successfully:', response);
+      //  console.log('Data posted successfully:', response);
         alert("Email Submitted");
         this.btnText = "Submit";
         this.changeDetectorRef.detectChanges();
 
       },
       (error) => {
-        console.error('Error posting data:', error);
-        alert("something went wrong");
+        // workaround , will fix later
+        console.error('Error posting data:', error.error);
+        if(error.error.text !== undefined)
+        {
+          alert(error.error.text);
+        }
+        else
+        {
+          alert(error.error);
+        }
+        
         this.btnText = "Submit";
 
         this.changeDetectorRef.detectChanges();
